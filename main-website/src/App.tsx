@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="h-full w-[97.8vw] flex flex-col justify-between items-center">
+    <div className="h-full w-[100vw] flex flex-col justify-between items-center">
       <Navbar /> 
         <div className="flex justify-center items-start h-[100vh] w-[100vw]  bg-[#DFDAD6]">
           <Outlet />
