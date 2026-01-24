@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="h-full w-[100vw] flex flex-col justify-between items-center">
       <Navbar /> 
-        <div className="flex justify-center items-start h-[100vh] w-[100vw]  bg-[#DFDAD6]">
+        <div className="flex justify-center items-start h-[100vh] w-full bg-[#DFDAD6]">
           <Outlet />
         </div>
       <Footer />
