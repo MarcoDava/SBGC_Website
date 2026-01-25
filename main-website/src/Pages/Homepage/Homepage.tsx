@@ -13,10 +13,10 @@ const Homepage = (props: Props) => {
                     <h2 className="flex justify-center items-center text-[4.375vw] font-semibold text-white p-0 h-[4.375rem] w-full">Sunday Badminton Group Club</h2>
                 </div>
             </motion.div>
-        </div>
-        <motion.button animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} className="">
+            <motion.button animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} className="">
             <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png"/>
-        </motion.button>
+            </motion.button>
+        </div>
         <div className="mt-[5vh] flex flex-col justify-center items-center h-[10vh] w-[100vw]">
             <h3 className="text-white text-[2.5vw] font-medium">Scroll Down to Learn More</h3>
         </div>
