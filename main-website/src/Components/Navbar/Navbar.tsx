@@ -26,7 +26,6 @@ const Navbar = (props : Props) => {
                 :
             <div className="flex flex-row justify-between items-center bg-[#B2A592] h-[5vh] w-[10vh] p-[1.5vh] shadow-lg/15 rounded-[2.5vh]">
                 <img className="h-[4.5vh]" src={logo}></img>
-                <p>|</p>
                 <img className="h-full rotate-180" src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="Collapse"></img>
             </div>
             }</button>
