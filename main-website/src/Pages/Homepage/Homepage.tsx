@@ -39,7 +39,7 @@ const Homepage = (props: Props) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
-                    className={`overflow-hidden flex-wrap transition-all duration-500  flex flex-row justify-center items-center h-full w-full ${scrolled ? "bg-radial from-[#000000]/50 to-[transparent]" : ""}`}
+                    className={`overflow-hidden flex-wrap transition-all duration-500  flex flex-row justify-center items-center h-screen w-full ${scrolled ? "bg-radial from-[#000000]/50 to-[transparent]" : ""}`}
                 >
                     <div className={`overflow-hidden transition-all duration-200 flex flex-col justify-center  ${scrolled ? "items-center h-[20vh] lg:h-[80vh] w-[90vw]" : "h-[60vh] lg:h-[80vh] lg:w-[50vw] w-[80vw] min-w-[340px]"}`}>
                         <div className={`overflow-hidden transition-all duration-200 flex flex-col justify-center items-start ${scrolled ? "h-[45vh]" : "h-[20vh]"}`}>
@@ -74,7 +74,7 @@ const Homepage = (props: Props) => {
                     <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" />
                 </motion.button>
             </div>
-            <div className="lg:mt-[370px] mt-[495px] flex flex-col justify-center items-center h-[200vh] w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
+            <div className="lg:mt-[370px] mt-[490px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
                 <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 
