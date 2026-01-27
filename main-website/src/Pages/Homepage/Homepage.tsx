@@ -10,17 +10,15 @@ import eventImage1 from '../../assets/sbgc-party.jpg';
 import eventImage2 from '../../assets/tournament_rewards.jpg';
 
 
-interface Props {};
-
-const Homepage = (props: Props) => {
+const Homepage = () => {
     const [scrolled, setScrolled] = useState(true);
     const [scrolledPast, setScrolledPast] = useState(true);
     const images = [
-        { image: Image1, alt: "Badminton Image 1" },
-        { image: Image2, alt: "Badminton Image 2" },
-        { image: Image3, alt: "Badminton Image 3" }
+        { key: "1", image: Image1, alt: "Badminton Image 1" },
+        { key: "2", image: Image2, alt: "Badminton Image 2" },
+        { key: "3", image: Image3, alt: "Badminton Image 3" }
     ];
-    const [currentImage, setCurrentImage] = useState(0);
+    // const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {

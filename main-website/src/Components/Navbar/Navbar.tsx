@@ -4,9 +4,8 @@ import logo from '../../assets/Logo.jpg';
 import { motion } from "motion/react"
 
 
-interface Props {};
 
-const Navbar = (props : Props) => {
+const Navbar = () => {
     const [expanded, setExpanded] = useState(false);
     return(
         <motion.div initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 2 }}className="fixed top-0 left-0 right-0 flex flex-row justify-start items-start h-full w-[15vh] z-50">

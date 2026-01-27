@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
             {path: "", element: <Homepage />},
             {path: "events", element : <Eventpage />},
             {path: "contact", element : <Contactpage />},
-            {path: "register", element: <Registerpage />},
+            {path: "register", element: <Registerpage />}
             // {path: "codeofethics", element: <CodeOfEthicsPage />},
             // {path: "profile" ,element: <ProfilePage />},
             // {path: "aboutus", element: <AboutUsPage />},

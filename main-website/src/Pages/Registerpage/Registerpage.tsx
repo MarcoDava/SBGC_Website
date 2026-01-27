@@ -1,8 +1,4 @@
-import React from 'react';
-
-interface Props {};
-
-const Registerpage = (props: Props) => {
+const Registerpage = () => {
     return(
     <div className="w-full h-[300vh] flex flex-col justify-start items-center gap-10">
         
