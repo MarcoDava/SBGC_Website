@@ -43,45 +43,48 @@ const Homepage = (props: Props) => {
                 >
                     <div className={`overflow-hidden transition-all duration-200 flex flex-col justify-center  ${scrolled ? "items-center h-[20vh] lg:h-[80vh] w-[90vw]" : "h-[60vh] lg:h-[80vh] lg:w-[50vw] w-[80vw] min-w-[340px]"}`}>
                         <div className={`overflow-hidden transition-all duration-200 flex flex-col justify-center items-start ${scrolled ? "h-[45vh]" : "h-[20vh]"}`}>
-                            <h1 className={`overflow-hidden transition-all duration-300 flex  items-center font-bold text-white m-0 p-0 w-full ${scrolled ? "justify-center h-[40vh] text-[25vw]" : "justify-start h-[15vh] text-[7.5vw]"}`}>
+                            <h1 className={`overflow-hidden transition-all duration-300 flex  items-center font-bold text-white m-0 p-0 w-full ${scrolled ? "justify-center h-[40vh] text-[25vw]" : "justify-start h-[15vh] text-[6rem]"}`}>
                                 SBGC
                             </h1>
-                            <h2 className={`overflow-hidden transition-all duration-300 flex font-semibold text-white m-0 p-0 w-full ${scrolled ? "justify-center items-center h-[7.5vh] text-[4.375vw]" : "justify-start items-start h-[5vh] text-[2vw]"}`}>
+                            <h2 className={`overflow-hidden transition-all duration-300 flex font-semibold text-white m-0 p-0 w-full ${scrolled ? "justify-center items-center h-[7.5vh] text-[4.375vw]" : "justify-start items-start h-[5vh] lg:text-[2rem] text-[1rem]"}`}>
                                 Sunday Badminton Group Club
                             </h2>
                         </div>
                         <p className={`overflow-hidden transition-all duration-300 text-left text-white mt-[2vh] p-0 ${scrolled ? "hidden" : "lg:w-[40vw] w-[80vw]"}`}>
                             We are a non-profit organization dedicated to promoting fitness, well-being, and community through the sport of badminton and inclusive social events.
                         </p>
-                        <div className={`overflow-hidden transition-all duration-300 flex flex-row justify-start gap-[8vw] text-white mt-[2vh] h-[10vh] p-0 ${scrolled ? "hidden" : "lg:w-[40vw] w-full lg:items-start items-center"}`}>
-                            <button className={`overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#55788C] pl-[2vw] pr-[2vw] p-[1vh] ${scrolled ? "hidden" : ""}`}>
+                        <div className={`overflow-hidden transition-all duration-300 flex flex-row lg:justify-start justify-center gap-[8vw] text-white mt-[2vh] h-[10vh] p-0 ${scrolled ? "hidden" : "lg:w-[40vw] w-full lg:items-start items-center"}`}>
+                            <button className={`overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#55788C] lg:px-[2vw] lg:py-[1vh] px-[7vw] ${scrolled ? "hidden" : ""}`}>
                                 Learn More
                             </button>
-                            <button className={`overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#DC0000] pl-[2vw] pr-[2vw] p-[1vh] ${scrolled ? "hidden" : ""}`}>
+                            <button className={`overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#DC0000] lg:px-[2vw] lg:py-[1vh] px-[7vw] ${scrolled ? "hidden" : ""}`}>
                                 Register Now!
                             </button>
 
                         </div>
                     </div>
                     <div className={`overflow-hidden transition-all duration-500 flex justify-center items-center flex-row lg:flex-col gap-[2vh] ${scrolled ? "hidden" : "lg:w-[25vw] w-full"}`}>
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw]"}`} src={Image1} alt="Badminton Icon" />
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw]"}`} src={Image2} alt="Badminton Icon" />
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh]  ${scrolled ? "hidden" : "lg:w-[20vw]"}`} src={Image3} alt="Badminton Icon" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image1} alt="Badminton Icon" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] w-[90vw]"}`} src={Image2} alt="Badminton Icon" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh]  ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image3} alt="Badminton Icon" />
                     </div>
 
                 </motion.div>
-                <motion.button animate={{ y: [0, -25, 0] }} transition={{ duration: 2, repeat: Infinity }} className={`${scrolled ? "opacity-100" : "opacity-0"}`}>
+                <motion.button animate={{ y: [0, -25, 0] }} transition={{ duration: 2, repeat: Infinity }} className={`${scrolledPast ? "opacity-100" : "opacity-0"}`}>
                     <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" />
                 </motion.button>
             </div>
-            <div className="mt-[5vh] flex flex-col justify-center items-center h-[200vh] w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
-                <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
-                    <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5vw] font-medium">About us</h3>
+            <div className="lg:mt-[370px] mt-[495px] flex flex-col justify-center items-center h-[200vh] w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
+                <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
+                    <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 
                         What began as a small Sunday meet-up among friends in 2017 has grown into a vibrant, family-friendly network of over 150 active members across the Greater Toronto Area. Rooted in Filipino-Canadian values and open to all backgrounds, 
                         SBGC creates a welcoming space where players of all skill levels can connect, grow, and thrive. From weekly games and major tournaments to community picnics, charity work, and cultural celebrations, SBGC is more than a club, 
                         it’s a home for camaraderie, diversity, and shared joy.
                     </p>
+                    <button className={`my-[2vh] w-full max-w-[300px] overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#55788C] lg:px-[2vw] lg:py-[1vh] px-[7vw] ${scrolled ? "hidden" : ""}`}>
+                        Learn More
+                    </button>
                     <div className="w-[80vw]">
                         <InfiniteMovingCards
                             items={images}//PLACE HOLDER IMAGES, WILL REPLACE LATER AND WILL GIVE PROPER JSON FILE
@@ -91,10 +94,19 @@ const Homepage = (props: Props) => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
-                    <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5vw] font-medium">Our Events</h3>
+                    <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5rem] font-medium">Our Events</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light"> 
                         SBGC hosts a variety of events throughout the year to foster community engagement and promote the sport of badminton. Our flagship event, the Annual SBGC Open Tournament, attracts players from across the region for a weekend of competitive play and socializing.
                     </p>
+                </div>
+                <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
+                    <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5rem] font-medium">Join Us</h3>
+                    <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light mb-[2vh]"> 
+                        Whether you’re a seasoned player or new to the sport, SBGC welcomes you to join our community. Become a member today and experience the joy of badminton, the warmth of friendship, and the thrill of competition.
+                    </p>
+                    <button className={`my-[2vh] w-full max-w-[300px] overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#DC0000] lg:px-[2vw] lg:py-[1vh] px-[7vw] ${scrolled ? "hidden" : ""}`}>
+                        Register Now!   
+                    </button>
                 </div>
 
                 
