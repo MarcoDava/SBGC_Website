@@ -5,6 +5,10 @@ import Image1 from '../../assets/Image1.jpg';
 import Image2 from '../../assets/Image2.jpg';
 import Image3 from '../../assets/Image3.jpg';
 import { InfiniteMovingCards } from "../../Components/ui/infinite-moving-cards";
+import DynamicCard from '../../Components/3DCard/DynamicCard';
+import eventImage1 from '../../assets/sbgc-party.jpg';
+import eventImage2 from '../../assets/tournament_rewards.jpg';
+
 
 interface Props {};
 
@@ -74,7 +78,7 @@ const Homepage = (props: Props) => {
                     <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" />
                 </motion.button>
             </div>
-            <div className="lg:mt-[370px] mt-[490px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
+            <div className=" mt-[490px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
                 <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 
@@ -98,6 +102,20 @@ const Homepage = (props: Props) => {
                     <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light"> 
                         SBGC hosts a variety of events throughout the year to foster community engagement and promote the sport of badminton. Our flagship event, the Annual SBGC Open Tournament, attracts players from across the region for a weekend of competitive play and socializing.
                     </p>
+                    <div className="w-[80vw] flex justify-center items-center flex-row flex-wrap gap-[2vw]">
+                        <DynamicCard
+                            name="SBGC Parties"
+                            description="SBGC Parties are social gatherings organized by the club to foster camaraderie among members. These events often feature food, music, and friendly badminton matches."
+                            image={eventImage1}
+                            eventPage="#"
+                        />
+                        <DynamicCard
+                            name="Annual SBGC Open Tournaments"
+                            description="Our flagship event, the Annual SBGC Open Tournament, attracts players from across the region for a weekend of competitive play and socializing."
+                            image={eventImage2}
+                            eventPage="#"
+                        />
+                    </div>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5rem] font-medium">Join Us</h3>
