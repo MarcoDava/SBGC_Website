@@ -115,6 +115,26 @@ const Homepage = () => {
                         />
                     </div>
                 </div>
+                <div className="flex flex-row justify-center items-center flex-wrap w-full gap-[2vw]">
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] bg-[#DC0000] rounded-[2vh]">
+                        <h3 className="text-white text-center mt-[5vh] text-[2rem] font-medium">Vision</h3>
+                        <p className="text-white text-center mx-[2vh] text-[1rem] font-light">
+                            SBGC aims to unite, train, and support the Filipino-Canadian community in Ontario through badminton tournaments, social events, and sports. It also promotes charity, preserves Philippine heritage, and welcomes diverse members.
+                        </p>
+                    </motion.div>
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] bg-[#FF7F00] rounded-[2vh]">
+                        <h3 className="text-white text-center mt-[5vh] text-[2rem] font-medium">Membership</h3>
+                        <p className="text-white text-center mx-[2vh] text-[1rem] font-light">
+                            Our club boasts an estimated membership of 150 to 263 individuals, with 150 active members. Enthusiasts from the GTA, including Mississauga, Brampton, Milton, Hamilton, Vaughan, Oakville, Burlington, and Cambridge, are part of this vibrant community.
+                        </p>
+                    </motion.div>
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] bg-[#55788C] rounded-[2vh]">
+                        <h3 className="text-white text-center mt-[5vh] text-[2rem] font-medium">Programs</h3>
+                        <p className="text-white text-center mx-[2vh] text-[1rem] font-light">
+                            SBGC hosts weekly badminton tournaments with the local Filipino-Canadian community and organizes major Summer and Winter team events. It competes in international tournaments, including NABA events in the U.S.
+                        </p>
+                    </motion.div>
+                </div>
                 <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5rem] font-medium">Join Us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light mb-[2vh]"> 

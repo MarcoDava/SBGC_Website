@@ -21,12 +21,12 @@ const Navbar = () => {
             </div>
             <button className="ml-[2vh] mt-[2vh]" onClick={()=>setExpanded(curr=>!curr)}>{
             expanded ? 
-            <div className="flex flex-row justify-center items-center bg-[#B2A592]  h-[5vh] w-[5vh] p-[1.5vh] shadow-lg/15 rounded-[50%]">
+            <div className="flex flex-row justify-center items-center bg-[#B2A592]  h-[7vh] w-[7vh] p-[1.5vh] shadow-lg/15 rounded-[50%]">
                 <img className="h-full" src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="Expand"></img>
             </div>    
                 :
-            <div className="flex flex-row justify-between items-center bg-[#B2A592] h-[5vh] w-[10vh] p-[1.5vh] shadow-lg/15 rounded-[2.5vh]">
-                <img className="h-[4.5vh]" src={logo}></img>
+            <div className="flex flex-row justify-between items-center bg-[#B2A592] h-[7vh] w-[14vh] p-[1.5vh] shadow-lg/15 rounded-[3.5vh]">
+                <img className="h-[6vh] rounded-[1vh]" src={logo}></img>
                 <img className="h-full rotate-180" src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="Collapse"></img>
             </div>
             }</button>
