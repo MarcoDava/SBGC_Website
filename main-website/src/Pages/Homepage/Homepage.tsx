@@ -24,7 +24,7 @@ const Homepage = () => {
         const handleScroll = () => {
             
             setScrolled(window.scrollY < 100);
-            setScrolledPast(window.scrollY < 500);
+            setScrolledPast(window.scrollY < 300);
         };
 
         
@@ -36,7 +36,7 @@ const Homepage = () => {
 
     return (
         <div style={{ minHeight: scrolledPast ? '100vh' : 'auto' }} className="w-full h-full flex flex-col justify-center items-center">
-            <div style={{ backgroundImage: scrolled ? `url(${heroImage})` : 'none', position: scrolledPast ? 'sticky' : 'relative', top: scrolledPast ? 0 : 500, left: scrolledPast ? 0 : 'auto', zIndex: scrolledPast ? 10 : 'auto' }} className="overflow-hidden transition-all w-full h-[100vh] bg-center bg-cover flex flex-col justify-center items-center bg-[#26332A]">
+            <div style={{ backgroundImage: scrolled ? `url(${heroImage})` : 'none', position: scrolledPast ? 'sticky' : 'relative', top: scrolledPast ? 0 : 300, left: scrolledPast ? 0 : 'auto', zIndex: scrolledPast ? 10 : 'auto' }} className="overflow-hidden transition-all w-full h-[100vh] bg-center bg-cover flex flex-col justify-center items-center bg-[#26332A]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -76,7 +76,7 @@ const Homepage = () => {
                     <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" />
                 </motion.button>
             </div>
-            <div className=" mt-[490px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
+            <div className=" mt-[290px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
                 <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 
@@ -114,6 +114,26 @@ const Homepage = () => {
                             eventPage="#"
                         />
                     </div>
+                </div>
+                <div className="flex flex-row justify-center items-center flex-wrap w-full gap-[2vw]">
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] min-w-[300px] bg-[#DC0000] rounded-[2vh] flex flex-col justify-center items-center">
+                        <h3 className="text-white text-center  text-[2rem] font-medium">Vision</h3>
+                        <p className="text-white text-center text-[1rem] font-light">
+                            SBGC aims to unite, train, and support the Filipino-Canadian community in Ontario through badminton tournaments, social events, and sports. It also promotes charity, preserves Philippine heritage, and welcomes diverse members.
+                        </p>
+                    </motion.div>
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] min-w-[300px] bg-[#FF7F00] rounded-[2vh] flex flex-col justify-center items-center">
+                        <h3 className="text-white text-center  text-[2rem] font-medium">Membership</h3>
+                        <p className="text-white text-center text-[1rem] font-light">
+                            Our club boasts an estimated membership of 150 to 263 individuals, with 150 active members. Enthusiasts from the GTA, including Mississauga, Brampton, Milton, Hamilton, Vaughan, Oakville, Burlington, and Cambridge, are part of this vibrant community.
+                        </p>
+                    </motion.div>
+                    <motion.div whileHover={{scale:1.1}} className="h-[30vh] w-[30vw] min-w-[300px] bg-[#55788C] rounded-[2vh] flex flex-col justify-center items-center">
+                        <h3 className="text-white text-center text-[2rem] font-medium">Programs</h3>
+                        <p className="text-white text-center text-[1rem] font-light">
+                            SBGC hosts weekly badminton tournaments with the local Filipino-Canadian community and organizes major Summer and Winter team events. It competes in international tournaments, including NABA events in the U.S.
+                        </p>
+                    </motion.div>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw]  text-white text-[2.5rem] font-medium">Join Us</h3>
