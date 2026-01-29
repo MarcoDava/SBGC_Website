@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import Homepage from "../Pages/Homepage/Homepage";
-import Eventpage from "../Pages/Eventpage/Eventpage";
+import {Eventpage} from "../Pages/Eventpage/Eventpage";
 import Contactpage from "../Pages/Contactpage/Contactpage";
 import Registerpage from "../Pages/Registerpage/Registerpage";
 import App from "../App";
