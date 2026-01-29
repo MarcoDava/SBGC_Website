@@ -136,7 +136,7 @@ export function EventCards(events: {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-        {events.map((event, index) => (
+        {events.map((event) => (
           <motion.div
             layoutId={`card-${event.title}-${id}`}
             key={event.title}
