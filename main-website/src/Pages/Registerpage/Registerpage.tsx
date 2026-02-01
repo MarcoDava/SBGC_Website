@@ -3,5 +3,5 @@ const Registerpage = () => {
     <div className="w-full h-[300vh] flex flex-col justify-start items-center gap-10">
         
     </div>)
-}//image is a placeholder, will replace with something better later
+}//need to ask client if theyd rather have a third party handle registrations or if I need to handle it
 export default Registerpage;
