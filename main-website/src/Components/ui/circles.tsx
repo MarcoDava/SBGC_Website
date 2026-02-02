@@ -34,7 +34,7 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
             width: "min(20vw, 20vh)",
             height: "min(20vw, 20vh)",
             background:
-              "conic-gradient(from 0deg, transparent 0deg, rgba(255, 127, 0, 0.5) 60deg, transparent 120deg, transparent 360deg)",
+              "conic-gradient(from 0deg, transparent 0deg, #000000 60deg, transparent 120deg, transparent 360deg)",
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -51,7 +51,7 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
             width: "min(35vw, 35vh)",
             height: "min(35vw, 35vh)",
             background:
-              "conic-gradient(from 180deg, rgba(85, 120, 140, 0.45) 0deg, transparent 40deg, transparent 90deg, rgba(255, 127, 0, 0.35) 130deg, transparent 170deg, transparent 270deg, rgba(220, 0, 0, 0.3) 310deg, transparent 350deg)",
+              "conic-gradient(from 180deg, #000000 0deg, transparent 40deg, transparent 90deg, #000000 130deg, transparent 170deg, transparent 270deg, #000000 310deg, transparent 350deg)",
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -68,7 +68,7 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
             width: "min(50vw, 50vh)",
             height: "min(50vw, 50vh)",
             background:
-              "conic-gradient(from 90deg, transparent 0deg, rgba(255, 127, 0, 0.45) 30deg, rgba(220, 0, 0, 0.6) 60deg, transparent 90deg, transparent 180deg, rgba(85, 120, 140, 0.35) 210deg, transparent 240deg, transparent 360deg)",
+              "conic-gradient(from 90deg, transparent 0deg, #000000 30deg, #000000 60deg, transparent 90deg, transparent 180deg, #000000 210deg, transparent 240deg, transparent 360deg)",
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -85,7 +85,7 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
             width: "min(65vw, 65vh)",
             height: "min(65vw, 65vh)",
             background:
-              "conic-gradient(from 270deg, rgba(85, 120, 140, 0.35) 0deg, transparent 50deg, transparent 120deg, rgba(255, 127, 0, 0.3) 150deg, transparent 200deg, transparent 300deg, rgba(220, 0, 0, 0.25) 330deg, transparent 360deg)",
+              "conic-gradient(from 270deg, #000000 0deg, transparent 50deg, transparent 120deg, #000000 150deg, transparent 200deg, transparent 300deg, #000000 330deg, transparent 360deg)",
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px))",
             WebkitMask:
@@ -102,7 +102,7 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
             width: "min(80vw, 80vh)",
             height: "min(80vw, 80vh)",
             background:
-              "conic-gradient(from 0deg, rgba(85, 120, 140, 0.25) 0deg, transparent 30deg, transparent 180deg, rgba(255, 127, 0, 0.2) 200deg, transparent 230deg, transparent 360deg)",
+              "conic-gradient(from 0deg, #000000 0deg, transparent 30deg, transparent 180deg, #000000 200deg, transparent 230deg, transparent 360deg)",
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px))",
             WebkitMask:
