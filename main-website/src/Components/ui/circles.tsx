@@ -5,11 +5,14 @@ interface BackgroundCirclesProps {
   className?: string
 }
 
+// Circle line colour – warm muted tone (lighter than black, fits red-tint background)
+const CIRCLE_LINE = "#7a6b6b";
+
 export function BackgroundCircles({ className }: BackgroundCirclesProps) {
   return (
     <div
       className={cn(
-        "fixed inset-0 flex items-center justify-center overflow-hidden bg-[#B2A592]",
+        "fixed inset-0 flex items-center justify-center overflow-hidden bg-[#4a3636]",
         className
       )}
     >
@@ -17,8 +20,8 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
       <div
         className="absolute rounded-full blur-[120px]"
         style={{
-          width: "min(60vw, 60vh)",
-          height: "min(60vw, 60vh)",
+          width: "min(75vw, 75vh)",
+          height: "min(75vw, 75vh)",
           background: "rgba(85, 120, 140, 0.15)", // #55788C
         }}
       />
@@ -31,10 +34,10 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
           animate={{ rotate: 360 }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
           style={{
-            width: "min(20vw, 20vh)",
-            height: "min(20vw, 20vh)",
+            width: "min(28vw, 28vh)",
+            height: "min(28vw, 28vh)",
             background:
-              "conic-gradient(from 0deg, transparent 0deg, #000000 60deg, transparent 120deg, transparent 360deg)",
+              `conic-gradient(from 0deg, transparent 0deg, ${CIRCLE_LINE} 60deg, transparent 120deg, transparent 360deg)`,
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -48,10 +51,10 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
           animate={{ rotate: -360 }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           style={{
-            width: "min(35vw, 35vh)",
-            height: "min(35vw, 35vh)",
+            width: "min(48vw, 48vh)",
+            height: "min(48vw, 48vh)",
             background:
-              "conic-gradient(from 180deg, #000000 0deg, transparent 40deg, transparent 90deg, #000000 130deg, transparent 170deg, transparent 270deg, #000000 310deg, transparent 350deg)",
+              `conic-gradient(from 180deg, ${CIRCLE_LINE} 0deg, transparent 40deg, transparent 90deg, ${CIRCLE_LINE} 130deg, transparent 170deg, transparent 270deg, ${CIRCLE_LINE} 310deg, transparent 350deg)`,
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -65,10 +68,10 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
           animate={{ rotate: 360 }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           style={{
-            width: "min(50vw, 50vh)",
-            height: "min(50vw, 50vh)",
+            width: "min(68vw, 68vh)",
+            height: "min(68vw, 68vh)",
             background:
-              "conic-gradient(from 90deg, transparent 0deg, #000000 30deg, #000000 60deg, transparent 90deg, transparent 180deg, #000000 210deg, transparent 240deg, transparent 360deg)",
+              `conic-gradient(from 90deg, transparent 0deg, ${CIRCLE_LINE} 30deg, ${CIRCLE_LINE} 60deg, transparent 90deg, transparent 180deg, ${CIRCLE_LINE} 210deg, transparent 240deg, transparent 360deg)`,
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 2px), black calc(100% - 2px))",
             WebkitMask:
@@ -82,10 +85,10 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
           animate={{ rotate: -360 }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           style={{
-            width: "min(65vw, 65vh)",
-            height: "min(65vw, 65vh)",
+            width: "min(85vw, 85vh)",
+            height: "min(85vw, 85vh)",
             background:
-              "conic-gradient(from 270deg, #000000 0deg, transparent 50deg, transparent 120deg, #000000 150deg, transparent 200deg, transparent 300deg, #000000 330deg, transparent 360deg)",
+              `conic-gradient(from 270deg, ${CIRCLE_LINE} 0deg, transparent 50deg, transparent 120deg, ${CIRCLE_LINE} 150deg, transparent 200deg, transparent 300deg, ${CIRCLE_LINE} 330deg, transparent 360deg)`,
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px))",
             WebkitMask:
@@ -99,10 +102,10 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
           animate={{ rotate: 360 }}
           transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
           style={{
-            width: "min(80vw, 80vh)",
-            height: "min(80vw, 80vh)",
+            width: "min(98vw, 98vh)",
+            height: "min(98vw, 98vh)",
             background:
-              "conic-gradient(from 0deg, #000000 0deg, transparent 30deg, transparent 180deg, #000000 200deg, transparent 230deg, transparent 360deg)",
+              `conic-gradient(from 0deg, ${CIRCLE_LINE} 0deg, transparent 30deg, transparent 180deg, ${CIRCLE_LINE} 200deg, transparent 230deg, transparent 360deg)`,
             mask:
               "radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px))",
             WebkitMask:
@@ -111,12 +114,12 @@ export function BackgroundCircles({ className }: BackgroundCirclesProps) {
         />
       </div>
 
-      {/* Vignette */}
+      {/* Vignette – Red tint: #2a1f1f (dark), #4a3636 (muted burgundy) */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at center, transparent 0%, transparent 40%, #26332A 70%, #1e2922 100%)",
+            "radial-gradient(circle at center, transparent 0%, transparent 40%, #2a1f1f 70%, #2a1f1f 100%)",
         }}
       />
     </div>

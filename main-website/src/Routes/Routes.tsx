@@ -4,6 +4,9 @@ import {Eventpage} from "../Pages/Eventpage/Eventpage";
 import Contactpage from "../Pages/Contactpage/Contactpage";
 import Registerpage from "../Pages/Registerpage/Registerpage";
 import App from "../App";
+import CodeOfEthicsPage from "../Pages/CodeOfEthicspage/CodeOfEthicspage";
+import AboutUsPage from "../Pages/AboutUspage/AboutUspage";
+// import HistoryPage from "../Pages/HistoryPage/HistoryPage";
 
 export const router = createBrowserRouter([
     {
@@ -13,10 +16,10 @@ export const router = createBrowserRouter([
             {path: "", element: <Homepage />},
             {path: "events", element : <Eventpage />},
             {path: "contact", element : <Contactpage />},
-            {path: "register", element: <Registerpage />}
-            // {path: "codeofethics", element: <CodeOfEthicsPage />},
+            {path: "register", element: <Registerpage />},
+            {path: "codeofethics", element: <CodeOfEthicsPage />},
             // {path: "profile" ,element: <ProfilePage />},
-            // {path: "aboutus", element: <AboutUsPage />},
+            {path: "aboutus", element: <AboutUsPage />},
             // {path: "aboutus/history", element: <HistoryPage />}
         ]
     }

@@ -1,33 +1,133 @@
-import { Link } from 'react-router';
-import Logo from '../../assets/Logo.jpg';
-const Footer = () => {
-    return(
-        <div className="bg-[#26332A] h-[33vh] w-full flex justify-center items-center flex-col">
-        <div className="pt-[5vh] bg-[#26332A]  h-full w-[80vw] flex justify-around items-center flex-row">
-            <div className="flex h-full flex-col justify-start items-start text-white">
-                <img src={Logo} className="h-[15vh]"></img>
-            </div>
-            <div className="flex h-full flex-col justify-start items-start text-white">
-                <h3 className="font-bold mb-2">Navigation</h3>
-                <Link to="/" className="mb-1">Home</Link>
-                <Link to="/events" className="mb-1">Events</Link>
-                <Link to="/contact" className="mb-1">Contact</Link>
-                <Link to="/register" className="mb-1">Register</Link>
-            </div>
-            <div className="flex h-full flex-col justify-start items-start text-white">
-                <h3 className="font-bold mb-2">Contact Us</h3>
-                <p className="mb-1">Email:</p>
-                <p className="mb-1">Phone:</p>
-                <p className="mb-1">Address:</p>
-            </div>
+import { Link } from "react-router";
+import Logo from "../../assets/Logo.jpg";
+import {
+  Home,
+  CalendarDays,
+  Mail,
+  UserPlus,
+  Scale,
+  Users,
+  MapPin,
+  Facebook,
+  Instagram,
+  Music2,
+} from "lucide-react";
+
+const navLinks = [
+  { to: "/", label: "Home", Icon: Home },
+  { to: "/events", label: "Events", Icon: CalendarDays },
+  { to: "/contact", label: "Contact", Icon: Mail },
+  { to: "/register", label: "Register", Icon: UserPlus },
+  { to: "/codeofethics", label: "Code of Ethics", Icon: Scale },
+  { to: "/aboutus", label: "About Us", Icon: Users },
+];
+
+const socialLinks = [
+  { href: "https://www.facebook.com/", label: "Facebook", Icon: Facebook },
+  { href: "https://www.tiktok.com/", label: "TikTok", Icon: Music2 },
+  { href: "https://www.instagram.com/", label: "Instagram", Icon: Instagram },
+];
+
+const iconSize = 18;
+
+export default function Footer() {
+  return (
+    <footer className="relative z-10 flex-shrink-0 w-full border-t border-[#4a3636]/40 bg-[#2a1f1f]">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* Logo & tagline */}
+          <div className="flex flex-col items-start gap-3 text-left lg:col-span-1">
+            <img
+              src={Logo}
+              alt="SBGC Logo"
+              className="h-20 w-auto object-contain md:h-24"
+              decoding="async"
+              loading="lazy"
+            />
+            <p className="text-left text-sm text-white/80">
+              Sunday Badminton Group Club — community, sport, and shared joy.
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div className="text-left">
+            <h3 className="mb-4 text-left text-sm font-semibold uppercase tracking-wider text-white/90">
+              Navigation
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {navLinks.map(({ to, label, Icon }) => (
+                <li key={to} className="flex items-center gap-2">
+                  <Icon size={iconSize} className="flex-shrink-0 text-white/70" aria-hidden />
+                  <Link
+                    to={to}
+                    className="text-left text-white/80 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4a3636] focus:ring-offset-2 focus:ring-offset-[#2a1f1f] rounded"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="text-left">
+            <h3 className="mb-4 text-left text-sm font-semibold uppercase tracking-wider text-white/90">
+              Contact Us
+            </h3>
+            <ul className="flex flex-col gap-3 text-white/80">
+              <li className="flex items-start gap-2">
+                <Mail size={iconSize} className="mt-0.5 flex-shrink-0 text-white/70" aria-hidden />
+                <a
+                  href="mailto:agnes.v.cruz@gmail.com"
+                  className="text-left transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4a3636] focus:ring-offset-2 focus:ring-offset-[#2a1f1f] rounded"
+                >
+                  agnes.v.cruz@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin size={iconSize} className="mt-0.5 flex-shrink-0 text-white/70" aria-hidden />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=134+Kennedy+Rd+S+Brampton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-left transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4a3636] focus:ring-offset-2 focus:ring-offset-[#2a1f1f] rounded"
+                >
+                  134 Kennedy Rd S, Brampton
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div className="text-left">
+            <h3 className="mb-4 text-left text-sm font-semibold uppercase tracking-wider text-white/90">
+              Follow Us
+            </h3>
+            <ul className="flex flex-wrap gap-4">
+              {socialLinks.map(({ href, label, Icon }) => (
+                <li key={label} className="flex items-center gap-2">
+                  <Icon size={iconSize} className="flex-shrink-0 text-white/70" aria-hidden />
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-left text-white/80 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4a3636] focus:ring-offset-2 focus:ring-offset-[#2a1f1f] rounded text-sm"
+                    aria-label={label}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <hr className="border-t border-white w-full pt-[2vh]"></hr>
-        <div className="text-white">
-            <p className="pb-[2vh]">© 2026 SBGC All rights reserved.</p>
+
+        <div className="mt-12 pt-8 border-t border-white/10 text-left">
+          <p className="text-left text-sm text-white/60">
+            © {new Date().getFullYear()} Sunday Badminton Group Club. All rights reserved.
+          </p>
         </div>
-        </div>
-    )
+      </div>
+    </footer>
+  );
 }
-
-
-export default Footer;
