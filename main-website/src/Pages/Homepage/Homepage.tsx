@@ -32,11 +32,22 @@ const Homepage = () => {
 
        
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Preload LCP hero image for faster first paint
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = heroImage;
+        link.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(link);
+        return () => { if (link.parentNode) link.parentNode.removeChild(link); };
     }, []);  
 
     return (
         <div style={{ minHeight: scrolledPast ? '100vh' : 'auto' }} className="w-full h-full flex flex-col justify-center items-center">
-            <div style={{ backgroundImage: scrolled ? `url(${heroImage})` : 'none', position: scrolledPast ? 'sticky' : 'relative', top: scrolledPast ? 0 : 300, left: scrolledPast ? 0 : 'auto', zIndex: scrolledPast ? 10 : 'auto' }} className="overflow-hidden transition-all w-full h-[100vh] bg-center bg-cover flex flex-col justify-center items-center bg-[#26332A]">
+            <div style={{ backgroundImage: scrolled ? `url(${heroImage})` : 'none', position: scrolledPast ? 'sticky' : 'relative', top: scrolledPast ? 0 : 300, left: scrolledPast ? 0 : 'auto', zIndex: scrolledPast ? 10 : 'auto' }} className="overflow-hidden transition-all w-full h-[100vh] bg-center bg-cover flex flex-col justify-center items-center bg-[#2a1f1f]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -66,17 +77,17 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div className={`overflow-hidden transition-all duration-500 flex justify-center items-center flex-row lg:flex-col gap-[2vh] ${scrolled ? "hidden" : "lg:w-[25vw] w-full"}`}>
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image1} alt="Badminton Icon" />
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] w-[90vw]"}`} src={Image2} alt="Badminton Icon" />
-                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh]  ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image3} alt="Badminton Icon" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image1} alt="Badminton Icon" decoding="async" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh] ${scrolled ? "hidden" : "lg:w-[20vw] w-[90vw]"}`} src={Image2} alt="Badminton Icon" decoding="async" />
+                        <img className={`overflow-hidden transition-all duration-500 rounded-[3vh]  ${scrolled ? "hidden" : "lg:w-[20vw] hidden lg:flex"}`} src={Image3} alt="Badminton Icon" decoding="async" />
                     </div>
 
                 </motion.div>
                 <motion.button animate={{ y: [0, -25, 0] }} transition={{ duration: 2, repeat: Infinity }} className={`${scrolledPast ? "opacity-100" : "opacity-0"}`}>
-                    <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" />
+                    <img className="h-[5vh] w-[5vh]" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" alt="Scroll down" decoding="async" loading="lazy" width={80} height={80} />
                 </motion.button>
             </div>
-            <div className=" mt-[290px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#26332A] from-25% to-[#B2A592] gap-[5vh] pb-[10vh]">
+            <div className=" mt-[290px]  flex flex-col justify-center items-center h-full w-[100vw] bg-gradient-to-b from-[#2a1f1f] from-25% to-[#4a3636] gap-[5vh] pb-[10vh]">
                 <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 

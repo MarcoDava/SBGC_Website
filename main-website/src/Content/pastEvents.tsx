@@ -1,8 +1,12 @@
+// Placeholder images (600×400) – replace with real event photos when available
+const PLACEHOLDER_PAST =
+  "https://placehold.co/600x400/26332A/B2A592?text=Past+Event";
+
 export const pastEvents = [
   {
     description: "September 26, 2024",
     title: "SBGC Open Tournament",
-    src: "../../../assets/Image5.jpg",
+    src: PLACEHOLDER_PAST,
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

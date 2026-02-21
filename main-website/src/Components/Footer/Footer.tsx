@@ -2,10 +2,10 @@ import { Link } from 'react-router';
 import Logo from '../../assets/Logo.jpg';
 const Footer = () => {
     return(
-        <div className="bg-[#26332A] h-[33vh] w-full flex justify-center items-center flex-col">
-        <div className="pt-[5vh] bg-[#26332A]  h-full w-[80vw] flex justify-around items-center flex-row">
+        <div className="bg-[#2a1f1f] h-[33vh] w-full flex justify-center items-center flex-col">
+        <div className="pt-[5vh] bg-[#2a1f1f]  h-full w-[80vw] flex justify-around items-center flex-row">
             <div className="flex h-full flex-col justify-start items-start text-white">
-                <img src={Logo} className="h-[15vh]"></img>
+                <img src={Logo} className="h-[15vh]" alt="SBGC Logo" decoding="async" loading="lazy" />
             </div>
             <div className="flex h-full flex-col justify-start items-start text-white">
                 <h3 className="font-bold mb-2">Navigation</h3>
