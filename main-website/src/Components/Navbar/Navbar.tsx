@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router";
 import logo from '../../assets/Logo.jpg';
 import { motion } from "motion/react";
 import { Home, CalendarDays, Mail, UserPlus, Scale, Users } from "lucide-react";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 const navLinks = [
   { to: "/", label: "Home", Icon: Home },
@@ -15,8 +16,11 @@ const navLinks = [
 
 const Navbar = () => {
     const [expanded, setExpanded] = useState(false);
-    return(
-        <motion.div initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} className="fixed top-0 left-0 right-0 flex flex-row justify-start items-start h-full w-[15vh] z-50">
+    const navRef = useRef<HTMLDivElement>(null!);
+    useOutsideClick(navRef, () => setExpanded(false));
+
+    return (
+        <motion.div ref={navRef} initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} className="fixed top-0 left-0 right-0 flex flex-row justify-start items-start h-full w-[15vh] z-50">
             <div className={`pt-[3vh] nav-container flex justify-start items-start flex-col gap-[5vh] bg-[#4a3636]/60 backdrop-blur-sm h-[100vh] shadow-lg/15 transition-all ${expanded ? "min-w-[260px] w-[260px]" : "w-[15vh]"}`}>
                 <img className={`overflow-hidden transition-all rounded-[1vh] ${expanded ? "ml-5 h-[10vh]": "w-0"}`} src={logo} alt="Logo" decoding="async" />
                 {navLinks.map(({ to, label, Icon }, i) => (
