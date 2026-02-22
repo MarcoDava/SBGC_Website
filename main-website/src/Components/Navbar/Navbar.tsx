@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import logo from '../../assets/Logo.jpg';
 import { motion } from "motion/react";
 import { Home, CalendarDays, Mail, UserPlus, Scale, Users } from "lucide-react";
@@ -20,18 +20,21 @@ const Navbar = () => {
     useOutsideClick(navRef, () => setExpanded(false));
 
     return (
-        <motion.div ref={navRef} initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} className="fixed top-0 left-0 right-0 flex flex-row justify-start items-start h-full w-[15vh] z-50">
+        <motion.div ref={navRef} initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} className={`fixed top-0 left-0 right-0 flex flex-row justify-start items-start w-[15vh] z-50 ${expanded ? "h-full" : "h-[12vh]    "}`}>
             <div className={`pt-[3vh] nav-container flex justify-start items-start flex-col gap-[5vh] bg-[#4a3636]/60 backdrop-blur-sm h-[100vh] shadow-lg/15 transition-all ${expanded ? "min-w-[260px] w-[260px]" : "w-[15vh]"}`}>
                 <img className={`overflow-hidden transition-all rounded-[1vh] ${expanded ? "ml-5 h-[10vh]": "w-0"}`} src={logo} alt="Logo" decoding="async" />
                 {navLinks.map(({ to, label, Icon }, i) => (
-                  <Link
+                  <NavLink
                     key={to}
                     to={to}
-                    className={`overflow-hidden transition-all text-white flex items-center justify-start gap-[3vw] text-left ${expanded ? (i === 0 ? "mt-[7vh] w-full pl-5 pr-4" : "w-full pl-5 pr-4") : "w-0"}`}
+                    end={to === "/"}
+                    className={({ isActive }) =>
+                      `overflow-hidden transition-all flex items-center justify-start gap-[3vw] text-left ${expanded ? (i === 0 ? "mt-[7vh] w-full pl-5 pr-4" : "w-full pl-5 pr-4") : "w-0"} ${isActive ? "text-white bg-white/20 rounded-lg font-semibold py-2" : "text-white/90 hover:text-white hover:bg-white/10 rounded-lg"}`
+                    }
                   >
                     <Icon size={22} className="flex-shrink-0" aria-hidden />
                     <span className="truncate">{label}</span>
-                  </Link>
+                  </NavLink>
                 ))}
 
             </div>

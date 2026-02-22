@@ -22,6 +22,7 @@ function Section({
       ref={ref}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 100 }}
+      exit={{ opacity: 0, y: -100 }}
       transition={{ duration: 1 }}
       className="mb-12 text-left bg-[#5b4747]/20 rounded-[2vw] p-2 backdrop-blur-sm"
     >

@@ -39,7 +39,7 @@ export function EventCards(events: {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <>
+    <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }} transition={{ duration: 1 }}>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -177,7 +177,7 @@ export function EventCards(events: {
           </motion.div>
         ))}
       </ul>
-    </>
+    </motion.div>
   );
 }
 
