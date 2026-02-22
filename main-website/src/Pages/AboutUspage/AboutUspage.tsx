@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { BackgroundCircles } from "@/Components/ui/circles";
 import tournament2019Image from "../../assets/April 21 2019 Weekly Tournament at Batts Atletic Inc Tomken Road.jpg";
 import fathersDayImage from "../../assets/Fathers Day celebrations June 17 2018 v2.jpg";
@@ -325,6 +326,15 @@ export default function AboutUspage() {
               Filipino-Canadian community and beyond.
             </p>
           </SectionWithImageLeft>
+
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/register"
+              className="rounded-[3vh] h-12 px-8 bg-[#DC0000] text-white font-semibold flex items-center justify-center hover:bg-[#b80000] transition-colors shadow-lg"
+            >
+              Register
+            </Link>
+          </div>
         </div>
       </div>
     </div>

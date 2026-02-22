@@ -23,7 +23,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://www.facebook.com/", label: "Facebook", Icon: Facebook },
+  { href: "https://www.facebook.com/groups/2052647094761701", label: "Facebook", Icon: Facebook },
   { href: "https://www.tiktok.com/", label: "TikTok", Icon: Music2 },
   { href: "https://www.instagram.com/", label: "Instagram", Icon: Instagram },
 ];
