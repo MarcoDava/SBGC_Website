@@ -1,12 +1,11 @@
 import { BackgroundCircles } from "@/Components/ui/circles";
-
-// Placeholder images – replace with your own (e.g. import from assets or use URLs)
-const PLACEHOLDER_IMAGE_1 =
-  "https://placehold.co/800x450/2a1f1f/4a3636?text=SBGC+History+Image+1";
-const PLACEHOLDER_IMAGE_2 =
-  "https://placehold.co/800x450/2a1f1f/4a3636?text=SBGC+History+Image+2";
-const PLACEHOLDER_IMAGE_3 =
-  "https://placehold.co/800x450/2a1f1f/4a3636?text=SBGC+History+Image+3";
+import tournament2019Image from "../../assets/April 21 2019 Weekly Tournament at Batts Atletic Inc Tomken Road.jpg";
+import fathersDayImage from "../../assets/Fathers Day celebrations June 17 2018 v2.jpg";
+import secondYearAnniversaryImage from "../../assets/Happy 2nd Year Anniversary March 2019.jpg";
+import LBCTournamentImage from "../../assets/LBC FUN TOURNAMENT April 14 2024.jpg";
+import firstAnniverseryImage from "../../assets/SBGC 1st Anniversary March 12 2018.jpg";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 
 function Section({
   title,
@@ -15,40 +14,67 @@ function Section({
   title: string;
   children: React.ReactNode;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
   return (
-    <section className="mb-12 text-left">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 100 }}
+      transition={{ duration: 1 }}
+      className="mb-12 text-left bg-[#5b4747]/20 rounded-[2vw] p-2 backdrop-blur-sm"
+    >
       <h2 className="text-white text-xl font-semibold mb-4 pb-2 border-b border-[#4a3636]/50 text-left">
         {title}
       </h2>
       <div className="text-white/90 text-base leading-relaxed space-y-4 text-left">
         {children}
       </div>
-    </section>
+    </motion.div>
   );
 }
 
-function PlaceholderImage({
-  src,
-  alt,
-  className = "",
+/** Section with an image on the right; text wraps around it. */
+function SectionWithImageLeft({
+  title,
+  imageSrc,
+  imageAlt,
+  children,
 }: {
-  src: string;
-  alt: string;
-  className?: string;
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  children: React.ReactNode;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
   return (
-    <figure className={`my-8 ${className}`}>
-      <img
-        src={src}
-        alt={alt}
-        className="w-full rounded-xl object-cover border border-[#4a3636]/30 max-h-[400px]"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption className="text-white/60 text-sm mt-2 text-center">
-        {alt}
-      </figcaption>
-    </figure>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 100 }}
+      transition={{ duration: 1 }}
+      className="mb-12 text-left overflow-hidden bg-[#5b4747]/20 rounded-[2vw] p-2 backdrop-blur-sm"
+    >
+      <h2 className="text-white text-xl font-semibold mb-4 pb-2 border-b border-[#4a3636]/50 text-left">
+        {title}
+      </h2>
+      <figure className="float-right w-[min(280px,45%)] ml-4 mb-4 shrink-0 rounded-xl overflow-hidden border border-[#4a3636]/30">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full object-cover p-2 rounded-[2vw]"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption className="text-white/60 text-sm mt-2 px-1 text-left ">
+          {imageAlt}
+        </figcaption>
+      </figure>
+      <div className="text-white/90 text-base leading-relaxed space-y-4 text-left">
+        {children}
+      </div>
+    </motion.div>
   );
 }
 
@@ -60,12 +86,8 @@ export default function AboutUspage() {
       </div>
 
       <div className="relative z-10 w-full max-w-3xl px-6 py-10 flex flex-col items-center pb-16">
-        <h1 className="text-white text-3xl font-semibold mb-4 text-center">
-          About Us
-        </h1>
-
-        <div className="w-full mb-12">
-          <p className="text-white/90 text-base leading-relaxed">
+        <Section title="About Us">
+          <p>
             What began as a small Sunday meet-up among friends in 2017 has grown
             into a vibrant, family-friendly network of over 150 active members
             across the Greater Toronto Area. Rooted in Filipino-Canadian values
@@ -75,18 +97,14 @@ export default function AboutUspage() {
             cultural celebrations, SBGC is more than a club—it's a home for
             camaraderie, diversity, and shared joy.
           </p>
-        </div>
-
-        <h2 className="text-white text-2xl font-semibold mb-8 text-center w-full">
-          History of SBGC
-        </h2>
+        </Section>
 
         <div className="w-full space-y-10">
-          <Section title="Formation and Founders">
-            <PlaceholderImage
-              src={PLACEHOLDER_IMAGE_1}
-              alt="Placeholder: Add early SBGC / founding photo"
-            />
+          <SectionWithImageLeft
+            title="History of SBGC - Formation and Founders"
+            imageSrc={tournament2019Image}
+            imageAlt="Early SBGC"
+          >
             <p>
               One fine Sunday on March 11, 2017, a group of four friends
               organized a get-together and “mini reunion” to play badminton for
@@ -193,13 +211,13 @@ export default function AboutUspage() {
               actively playing and participating in major and weekly badminton
               tournaments.
             </p>
-          </Section>
+          </SectionWithImageLeft>
 
-          <Section title="Chartered Non-profit">
-            <PlaceholderImage
-              src={PLACEHOLDER_IMAGE_2}
-              alt="Placeholder: Add SBGC leadership / non-profit photo"
-            />
+          <SectionWithImageLeft
+            title="Chartered Non-profit"
+            imageSrc={fathersDayImage}
+            imageAlt="Fathers Day Celebration"
+          >
             <p>
               Sunday Badminton Group Club (SBGC Canada Ltd.) was registered as a
               non-profit organization in June 2022. The three high school
@@ -209,9 +227,13 @@ export default function AboutUspage() {
               collective vision and dedication have been instrumental in shaping
               the club into a thriving Filipino community.
             </p>
-          </Section>
+          </SectionWithImageLeft>
 
-          <Section title="Mission and Purpose">
+          <SectionWithImageLeft
+            title="Mission and Purpose"
+            imageSrc={secondYearAnniversaryImage}
+            imageAlt="2nd Year Anniversary"
+          >
             <p>
               The primary mission of SBGC is to promote physical fitness and
               overall well-being among its members and their families. The club
@@ -226,7 +248,7 @@ export default function AboutUspage() {
               health of its members is at the core of SBGC's values, ensuring
               everyone feels supported and valued.
             </p>
-          </Section>
+          </SectionWithImageLeft>
 
           <Section title="Vision">
             <p>
@@ -251,11 +273,11 @@ export default function AboutUspage() {
             </p>
           </Section>
 
-          <Section title="Activities and Values">
-            <PlaceholderImage
-              src={PLACEHOLDER_IMAGE_3}
-              alt="Placeholder: Add tournament or community event photo"
-            />
+          <SectionWithImageLeft
+            title="Activities and Values"
+            imageSrc={LBCTournamentImage}
+            imageAlt="LBC Tournament"
+          >
             <p>
               SBGC organizes weekly badminton tournaments in collaboration with
               the local Filipino-Canadian community to promote the sport. The
@@ -269,7 +291,7 @@ export default function AboutUspage() {
               also engages in charitable works, including feeding programs and
               fund-raising activities for charitable causes in the Philippines.
             </p>
-          </Section>
+          </SectionWithImageLeft>
 
           <Section title="Benefits for Members">
             <p>
@@ -289,7 +311,11 @@ export default function AboutUspage() {
             </p>
           </Section>
 
-          <Section title="Conclusion">
+          <SectionWithImageLeft
+            title="Conclusion"
+            imageSrc={firstAnniverseryImage}
+            imageAlt="SBGC's 1st Anniversary"
+          >
             <p>
               The Sunday Badminton Group Club (SBGC Canada Ltd.) stands as a
               beacon of community spirit, inclusivity, and athletic excellence.
@@ -298,7 +324,7 @@ export default function AboutUspage() {
               members and foster a sense of belonging and camaraderie within the
               Filipino-Canadian community and beyond.
             </p>
-          </Section>
+          </SectionWithImageLeft>
         </div>
       </div>
     </div>
