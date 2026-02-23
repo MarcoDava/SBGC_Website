@@ -158,13 +158,13 @@ const Homepage = () => {
                             name="SBGC Parties"
                             description="SBGC Parties are social gatherings organized by the club to foster camaraderie among members. These events often feature food, music, and friendly badminton matches."
                             image={eventImage1}
-                            eventPage="#"
+                            eventPage="/events"
                         />
                         <DynamicCard
                             name="Annual SBGC Open Tournaments"
                             description="Our flagship event, the Annual SBGC Open Tournament, attracts players from across the region for a weekend of competitive play and socializing."
                             image={eventImage2}
-                            eventPage="#"
+                            eventPage="/events"
                         />
                     </div>
                 </div>
