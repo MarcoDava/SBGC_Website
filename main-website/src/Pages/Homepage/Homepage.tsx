@@ -113,9 +113,9 @@ const Homepage = () => {
                         transition={{ duration: 1, ease: "easeInOut" }}
                         style={{ pointerEvents: scrolled ? "none" : "auto" }}
                     >
-                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] hidden lg:flex" src={Image1} alt="Badminton Icon" decoding="async" />
-                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] w-[90vw]" src={Image2} alt="Badminton Icon" decoding="async" />
-                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] hidden lg:flex" src={Image3} alt="Badminton Icon" decoding="async" />
+                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] hidden lg:flex" src={Image1} alt="Badminton Icon" width={400} height={300} decoding="async" loading="lazy" />
+                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] w-[90vw]" src={Image2} alt="Badminton Icon" width={400} height={300} decoding="async" loading="lazy" />
+                        <img className="overflow-hidden transition-all duration-700 ease-out rounded-[3vh] lg:w-[20vw] hidden lg:flex" src={Image3} alt="Badminton Icon" width={400} height={300} decoding="async" loading="lazy" />
                     </motion.div>
 
                 </motion.div>
@@ -153,7 +153,7 @@ const Homepage = () => {
                     <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light"> 
                         SBGC hosts a variety of events throughout the year to foster community engagement and promote the sport of badminton. Our flagship event, the Annual SBGC Open Tournament, attracts players from across the region for a weekend of competitive play and socializing.
                     </p>
-                    <div className="w-[80vw] flex justify-center items-center flex-row flex-wrap gap-[2vw]">
+                    <div className="w-[80vw] flex justify-center items-center flex-row flex-wrap gap-[2vw] overflow-visible">
                         <DynamicCard
                             name="SBGC Parties"
                             description="SBGC Parties are social gatherings organized by the club to foster camaraderie among members. These events often feature food, music, and friendly badminton matches."

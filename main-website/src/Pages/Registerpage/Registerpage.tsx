@@ -47,8 +47,8 @@ const Registerpage = () => {
         </div>
         <a
           href="https://forms.gle/yyNU5nB7ySEQfsAe7"
-          target="https://forms.gle/yyNU5nB7ySEQfsAe7"
-          rel="https://forms.gle/yyNU5nB7ySEQfsAe7"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-[3vh] h-12 px-8 bg-[#DC0000] text-white font-semibold flex items-center justify-center hover:bg-[#b80000] transition-colors shadow-lg w-[500px] flex-wrap"
         >
           Open registration form

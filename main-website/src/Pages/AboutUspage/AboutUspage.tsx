@@ -65,6 +65,8 @@ function SectionWithImageLeft({
         <img
           src={imageSrc}
           alt={imageAlt}
+          width={560}
+          height={315}
           className="w-full object-cover p-2 rounded-[2vw]"
           loading="lazy"
           decoding="async"
@@ -90,14 +92,9 @@ export default function AboutUspage() {
       <div className="relative z-10 w-full max-w-3xl px-6 py-10 flex flex-col items-center pb-16">
         <Section title="About Us">
           <p>
-            What began as a small Sunday meet-up among friends in 2017 has grown
-            into a vibrant, family-friendly network of over 150 active members
-            across the Greater Toronto Area. Rooted in Filipino-Canadian values
-            and open to all backgrounds, SBGC creates a welcoming space where
-            players of all skill levels can connect, grow, and thrive. From weekly
-            games and major tournaments to community picnics, charity work, and
-            cultural celebrations, SBGC is more than a club—it's a home for
-            camaraderie, diversity, and shared joy.
+            Chartered Non-profit<br/>
+
+            Sunday Badminton Group Club or (SBGC Canada Ltd.) was registered as a non-profit organization last June 2022. The High School classmates founding members include Rando Fuentes, who serves as the CEO, Agnes Cruz as the COO,  and their close friends Marissa Rolluque Gairanan as the current CFO, and Treasurer and member of the Board Xenia Talledo. Their collective vision and dedication have been instrumental in shaping the club into a thriving Filipino community.
           </p>
         </Section>
 

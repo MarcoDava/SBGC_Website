@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState, type JSX } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { safeHref } from "../../lib/utils";
 
 export function EventCards(events: {
   src: string;
@@ -80,8 +81,8 @@ export function EventCards(events: {
             >
               <motion.div layoutId={`image-${active.title}-${id}`} className="flex-shrink-0">
                 <img
-                  width={200}
-                  height={200}
+                  width={640}
+                  height={384}
                   src={active.src}
                   alt={active.title}
                   className="w-full h-96 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
@@ -106,20 +107,23 @@ export function EventCards(events: {
                     </motion.p>
                   </div>
 
-                  {active.ctaLink ? (
+                  {active.ctaLink ? (() => {
+                    const href = safeHref(active.ctaLink);
+                    return (
                     <motion.a
                       layout
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      href={active.ctaLink}
-                      target={active.ctaLink.startsWith("http") ? "_blank" : undefined}
-                      rel={active.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined}
+                      href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white flex-shrink-0"
                     >
                       {active.ctaText}
                     </motion.a>
-                  ) : null}
+                    );
+                  })() : null}
                 </div>
                 <div className="pt-4 px-5 pb-10 flex-1 min-h-0 overflow-hidden">
                   <motion.div
@@ -150,8 +154,8 @@ export function EventCards(events: {
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${event.title}-${id}`} className="w-full">
                 <img
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={288}
                   src={event.src}
                   alt={event.title}
                   className="h-72 w-full rounded-lg object-cover object-top md:h-80"

@@ -10,7 +10,7 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Music2,
+  // Music2,
 } from "lucide-react";
 
 const navLinks = [
@@ -24,8 +24,8 @@ const navLinks = [
 
 const socialLinks = [
   { href: "https://www.facebook.com/groups/2052647094761701", label: "Facebook", Icon: Facebook },
-  { href: "https://www.tiktok.com/", label: "TikTok", Icon: Music2 },
-  { href: "https://www.instagram.com/", label: "Instagram", Icon: Instagram },
+  // // { href: "https://www.tiktok.com/", label: "TikTok", Icon: Music2 },
+   { href: "https://www.instagram.com/sbgc_official/", label: "Instagram", Icon: Instagram },
 ];
 
 const iconSize = 18;
@@ -40,6 +40,8 @@ export default function Footer() {
             <img
               src={Logo}
               alt="SBGC Logo"
+              width={96}
+              height={96}
               className="h-20 w-auto object-contain md:h-24"
               decoding="async"
               loading="lazy"

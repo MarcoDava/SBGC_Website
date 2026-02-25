@@ -1,4 +1,5 @@
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { safeHref } from "../../lib/utils";
 
 interface Props {
     name: string;
@@ -9,7 +10,7 @@ interface Props {
 
 const DynamicCard = (props : Props) => {
     return(
-        <div className="">
+        <>
             <CardContainer className="inter-var">
                 <CardBody className="bg-[#5b4747]/40 rounded-2xl border border-[#4a3636]/30 backdrop-blur-sm relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                     <CardItem
@@ -40,8 +41,9 @@ const DynamicCard = (props : Props) => {
                     <CardItem
                         translateZ={20}
                         as="a"
-                        href={props.eventPage}
-                        target="__blank"
+                        href={safeHref(props.eventPage)}
+                        target={props.eventPage.startsWith("http") ? "_blank" : undefined}
+                        rel={props.eventPage.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="px-4 py-2 rounded-xl text-xs font-normal text-neutral-400"
                     >
                         Learn More 
@@ -50,7 +52,7 @@ const DynamicCard = (props : Props) => {
                 </CardBody>
                 </CardContainer>
 
-        </div>
+        </>
     )
 }
 
