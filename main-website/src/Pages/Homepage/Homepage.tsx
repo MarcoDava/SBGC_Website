@@ -9,8 +9,30 @@ import { InfiniteMovingCards } from "../../Components/ui/infinite-moving-cards";
 import DynamicCard from '../../Components/3DCard/DynamicCard';
 import eventImage1 from '../../assets/sbgc-party.jpg';
 import eventImage2 from '../../assets/tournament_rewards.jpg';
+import { NoiseBackground } from '@/Components/ui/noise-background';
+import { LayoutTextFlip } from '@/Components/ui/layout-text-flip';
 
-
+function StatCard({  label }: { key: string, label: string }) {
+    return (
+        <motion.div whileHover={{ scale: 1.03 }} className="w-full md:max-w-[220px] max-w-[120px] h-[120px] md:h-[80px] mt-[2vh]">
+            <NoiseBackground
+                containerClassName="w-full h-full rounded-[2vh] bg-[#5b4747]/80 border border-[#705656]/80 shadow-none"
+                className="flex items-center justify-center h-full p-2"
+                gradientColors={[
+                    "rgb(126, 52, 52)",  // deep maroon
+                    "rgb(191, 97, 57)",  // warm orange
+                    "rgb(63, 93, 112)",  // muted blue-teal
+                ]}
+                noiseIntensity={0.05}
+                speed={0.5}
+            >
+                <p className="text-white/90 text-center text-[0.95rem] font-light leading-snug">
+                    {label}
+                </p>
+            </NoiseBackground>
+        </motion.div>
+    );
+}
 const Homepage = () => {
     const [scrolled, setScrolled] = useState(true);
     const [scrolledPast, setScrolledPast] = useState(true);
@@ -18,6 +40,13 @@ const Homepage = () => {
         { key: "1", image: Image1, alt: "Badminton Image 1" },
         { key: "2", image: Image2, alt: "Badminton Image 2" },
         { key: "3", image: Image3, alt: "Badminton Image 3" }
+    ];
+    const stats = [
+        { key: "1",  label: "150+ Active Members" },
+        { key: "2",  label: "Inclusive & Diverse" },
+        { key: "3",  label: "DEIB-focused, Safe & Welcoming Space for All" },
+        { key: "4",  label: "Intercity & International Tournaments" },
+        { key: "5",  label: "Philippine Heritage Preservation and Charity Work" },
     ];
     // const [currentImage, setCurrentImage] = useState(0);
 
@@ -133,11 +162,56 @@ const Homepage = () => {
                 <div className="mt-[5vh] flex flex-col justify-center items-center gap-[2vh] w-[80vw]">
                     <h3 className="text-start w-[80vw] lg:w-[50vw] text-white text-[2.5rem] font-medium">About us</h3>
                     <p className="text-start w-[80vw] lg:w-[50vw] text-[1.25rem] text-white font-light mb-[2vh]"> 
-                        What began as a small Sunday meet-up among friends in 2017 has grown into a vibrant, family-friendly network of over 150 active members across the Greater Toronto Area. Rooted in Filipino-Canadian values and open to all backgrounds, 
-                        SBGC creates a welcoming space where players of all skill levels can connect, grow, and thrive. From weekly games and major tournaments to community picnics, charity work, and cultural celebrations, SBGC is more than a club, 
-                        it’s a home for camaraderie, diversity, and shared joy.
+                        Sunday Badminton Group Club (SBGC Canada Ltd.) is a dynamic and vibrant Filipino-Canadian badminton community in Ontario promoting fitness, wellness, and meaningful connections. With 150+ active members across the GTA, SBGC hosts weekly tournaments, major team competitions, training sessions, and exciting social events. We proudly participate in intercity and international tournaments, including those organized by the North American Badminton Association.
+                        <br/>
+                        <br/>
+                        Rooted in diversity, equity, inclusion, and belonging, we welcome members of all ages and backgrounds. Beyond sports, we support charitable initiatives and preserve Philippine heritage.
+                        <br/>
+                        <br/>
+                        Building fitness, friendship & family through badminton in Ontario Canada.
+                        <br/>
+                        SBGC is a vibrant Filipino-Canadian community dedicated to promoting physical, mental & emotional well-being through weekly tournaments, major team competitions, training sessions, and social events.
                     </p>
-                    <Link to="/aboutus" className={`text-white overflow-hidden transition-all duration-500 rounded-[3vh] w-[50vw] h-[7vh] bg-[#55788C] lg:px-[2vw] lg:py-[1vh] px-[7vw] flex items-center justify-center ${scrolled ? "hidden" : ""}`}>
+                    <div className="md:w-[50vw] w-[80vw] flex flex-row justify-center items-center flex-wrap gap-[2.5vw]">
+                        {stats.map((stat) => (
+                            <StatCard key={stat.key} label={stat.label} />
+                        ))}
+                    </div>
+
+                    <div className="my-[3vh] w-[80vw] lg:w-[55vw]">
+                        <NoiseBackground
+                            containerClassName="w-full h-full rounded-[3vh] bg-[#5b4747]/70 border border-[#705656]/80 shadow-none"
+                            className="flex flex-col items-start justify-center gap-2 px-6 py-5"
+                            gradientColors={[
+                                "rgb(126, 52, 52)",
+                                "rgb(191, 97, 57)",
+                                "rgb(63, 93, 112)",
+                            ]}
+                            noiseIntensity={0.05}
+                            speed={0.5}
+                        >
+                            <h2 className="text-start text-white text-[2rem] md:text-[2.25rem] font-medium flex flex-wrap items-baseline lg:gap-2 gap-0">
+                                <span>We Are More Than a Club, We Are</span>
+                                <LayoutTextFlip
+                                    className="text-[2rem] md:text-[2.25rem] text-white font-medium"
+                                    text=""
+                                    words={["a Family", "a Team", "a Community", "SBGC"]}
+                                />
+                            </h2>
+                            <p className="text-start text-[1.1rem] md:text-[1.25rem] text-white/90 font-light flex flex-wrap gap-2">
+                                <motion.span whileHover={{scale:1.3}} className="inline-block px-3 py-1 bg-[#DC0000]/70">
+                                    Play
+                                </motion.span>
+                                <motion.span whileHover={{scale:1.3}} className="inline-block px-3 py-1 bg-[#DC0000]/70">
+                                    Grow
+                                </motion.span>
+                                <motion.span whileHover={{scale:1.3}} className="inline-block px-3 py-1 bg-[#DC0000]/70">
+                                    Belong
+                                </motion.span>
+                            </p>
+                        </NoiseBackground>
+                    </div>
+                    <Link to="/aboutus" className={`text-white overflow-hidden transition-all duration-500 rounded-[3vh] md:w-[50vw] w-[80vw] h-[7vh] bg-[#55788C] lg:px-[2vw] lg:py-[1vh] px-[7vw] flex items-center justify-center ${scrolled ? "hidden" : ""}`}>
                                 Learn More
                             </Link>
                     <div className="w-[80vw]">
@@ -193,7 +267,7 @@ const Homepage = () => {
                     <p className="text-start w-[80vw] lg:w-[50vw]  text-[1.25rem] text-white font-light mb-[2vh]"> 
                         Whether you’re a seasoned player or new to the sport, SBGC welcomes you to join our community. Become a member today and experience the joy of badminton, the warmth of friendship, and the thrill of competition.
                     </p>
-                    <Link to="/register" className={`text-white my-[2vh] w-full max-w-[300px] overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#DC0000] lg:px-[2vw] lg:py-[1vh] px-[7vw] flex items-center justify-center ${scrolled ? "hidden" : ""}`}>
+                    <Link to="/register" className={`text-white my-[2vh] w-[50vw] overflow-hidden transition-all duration-500 rounded-[3vh] h-[7vh] bg-[#DC0000] lg:px-[2vw] lg:py-[1vh] px-[7vw] flex items-center justify-center ${scrolled ? "hidden" : ""}`}>
                         Register Now!
                     </Link>
                 </div>

@@ -8,6 +8,7 @@ const Contactpage = lazy(() => import("../Pages/Contactpage/Contactpage"));
 const Registerpage = lazy(() => import("../Pages/Registerpage/Registerpage"));
 const CodeOfEthicsPage = lazy(() => import("../Pages/CodeOfEthicspage/CodeOfEthicspage"));
 const AboutUsPage = lazy(() => import("../Pages/AboutUspage/AboutUspage"));
+const Memberspage = lazy(() => import("../Pages/Memberspage/Memberspage"));
 
 function PageFallback() {
   return (
@@ -60,6 +61,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageFallback />}>
             <AboutUsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "members",
+        element: (
+          <Suspense fallback={<PageFallback />}>
+            <Memberspage />
           </Suspense>
         ),
       },
