@@ -4,12 +4,14 @@ import logo from '../../assets/Logo.jpg';
 import { motion } from "motion/react";
 import { Home, CalendarDays, Mail, UserPlus, Scale, Users } from "lucide-react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
+import arrow from "../../assets/arrow-88-32.png"
 
 const navLinks = [
   { to: "/", label: "Home", Icon: Home },
   { to: "/events", label: "Events", Icon: CalendarDays },
   { to: "/contact", label: "Contact", Icon: Mail },
   { to: "/register", label: "Register", Icon: UserPlus },
+  { to: "/members", label: "Members", Icon: Users },
   { to: "/codeofethics", label: "Code of Ethics", Icon: Scale },
   { to: "/aboutus", label: "About us", Icon: Users },
 ];
@@ -41,12 +43,12 @@ const Navbar = () => {
             <button className="ml-[2vh] mt-[2vh]" onClick={()=>setExpanded(curr=>!curr)}>{
             expanded ? 
             <div className="flex flex-row justify-center items-center bg-[#4a3636]/60 backdrop-blur-sm  h-[7vh] w-[7vh] p-[1.5vh] shadow-lg/15 rounded-[50%]">
-                <img className="h-full" src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="Expand" decoding="async" loading="lazy" width={24} height={24} />
+                <img className="h-full opacity-[0.5]" src={arrow} alt="Expand" decoding="async" loading="lazy" width={24} height={24} />
             </div>    
                 :
             <div className="flex flex-row justify-between items-center bg-[#4a3636]/60 backdrop-blur-sm h-[7vh] w-[14vh] p-[1.5vh] shadow-lg/15 rounded-[3.5vh]">
                 <img className="h-[6vh] rounded-[1vh]" src={logo} alt="Logo" width={36}  decoding="async" fetchPriority="high" />
-                <img className="h-full rotate-180" src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="Collapse" decoding="async" loading="lazy" width={24} height={24} />
+                <img className="h-full rotate-180 opacity-[0.5]" src={arrow} alt="Collapse" decoding="async" loading="lazy" width={24} height={24} />
             </div>
             }</button>
         </motion.div>

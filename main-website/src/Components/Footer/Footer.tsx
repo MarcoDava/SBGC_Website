@@ -80,10 +80,10 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Mail size={iconSize} className="mt-0.5 flex-shrink-0 text-white/70" aria-hidden />
                 <a
-                  href="mailto:agnes.v.cruz@gmail.com"
+                  href="mailto:sbgcofficial0311@gmail.com"
                   className="text-left transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4a3636] focus:ring-offset-2 focus:ring-offset-[#2a1f1f] rounded"
                 >
-                  agnes.v.cruz@gmail.com
+                  sbgcofficial0311@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
