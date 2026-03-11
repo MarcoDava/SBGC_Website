@@ -37,13 +37,14 @@ export interface EventSheetRow {
 }
 
 export async function fetchBirthdaysFromSheet(): Promise<SheetRow[]> {
-  const apiKey = import.meta.env.GOOGLE_SHEET_API_KEY as string | undefined;
+  const apiKey = import.meta.env
+    .VITE_GOOGLE_SHEET_API_KEY as string | undefined;
   if (!apiKey) {
-    throw new Error("GOOGLE_SHEET_API_KEY is not set");
+    throw new Error("VITE_GOOGLE_SHEET_API_KEY is not set");
   }
 
   const range =
-    (import.meta.env.GOOGLE_SHEET_RANGE as string) || DEFAULT_RANGE;
+    (import.meta.env.VITE_GOOGLE_SHEET_RANGE as string) || DEFAULT_RANGE;
   const url = new URL(
     `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}`
   );
@@ -71,13 +72,14 @@ export async function fetchBirthdaysFromSheet(): Promise<SheetRow[]> {
 }
 
 export async function fetchWeeklyWinnersFromSheet(): Promise<WinnerSheetRow[]> {
-  const apiKey = import.meta.env.GOOGLE_SHEET_API_KEY as string | undefined;
+  const apiKey = import.meta.env
+    .VITE_GOOGLE_SHEET_API_KEY as string | undefined;
   if (!apiKey) {
-    throw new Error("GOOGLE_SHEET_API_KEY is not set");
+    throw new Error("VITE_GOOGLE_SHEET_API_KEY is not set");
   }
 
   const range =
-    (import.meta.env.GOOGLE_SHEET_WEEKLY_WINNERS_RANGE as string) ||
+    (import.meta.env.VITE_GOOGLE_SHEET_WEEKLY_WINNERS_RANGE as string) ||
     WEEKLY_WINNERS_DEFAULT_RANGE;
   const url = new URL(
     `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
@@ -107,13 +109,14 @@ export async function fetchWeeklyWinnersFromSheet(): Promise<WinnerSheetRow[]> {
 }
 
 export async function fetchTournamentWinnersFromSheet(): Promise<WinnerSheetRow[]> {
-  const apiKey = import.meta.env.GOOGLE_SHEET_API_KEY as string | undefined;
+  const apiKey = import.meta.env
+    .VITE_GOOGLE_SHEET_API_KEY as string | undefined;
   if (!apiKey) {
-    throw new Error("GOOGLE_SHEET_API_KEY is not set");
+    throw new Error("VITE_GOOGLE_SHEET_API_KEY is not set");
   }
 
   const range =
-    (import.meta.env.GOOGLE_SHEET_TOURNAMENT_WINNERS_RANGE as string) ||
+    (import.meta.env.VITE_GOOGLE_SHEET_TOURNAMENT_WINNERS_RANGE as string) ||
     TOURNAMENT_WINNERS_DEFAULT_RANGE;
   const url = new URL(
     `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
@@ -143,13 +146,14 @@ export async function fetchTournamentWinnersFromSheet(): Promise<WinnerSheetRow[
 }
 
 export async function fetchUpcomingEventsFromSheet(): Promise<EventSheetRow[]> {
-  const apiKey = import.meta.env.GOOGLE_SHEET_API_KEY as string | undefined;
+  const apiKey = import.meta.env
+    .VITE_GOOGLE_SHEET_API_KEY as string | undefined;
   if (!apiKey) {
-    throw new Error("GOOGLE_SHEET_API_KEY is not set");
+    throw new Error("VITE_GOOGLE_SHEET_API_KEY is not set");
   }
 
   const range =
-    (import.meta.env.GOOGLE_SHEET_UPCOMING_EVENTS_RANGE as string) ||
+    (import.meta.env.VITE_GOOGLE_SHEET_UPCOMING_EVENTS_RANGE as string) ||
     UPCOMING_EVENTS_DEFAULT_RANGE;
   const url = new URL(
     `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
@@ -180,13 +184,14 @@ export async function fetchUpcomingEventsFromSheet(): Promise<EventSheetRow[]> {
 }
 
 export async function fetchPastEventsFromSheet(): Promise<EventSheetRow[]> {
-  const apiKey = import.meta.env.GOOGLE_SHEET_API_KEY as string | undefined;
+  const apiKey = import.meta.env
+    .VITE_GOOGLE_SHEET_API_KEY as string | undefined;
   if (!apiKey) {
-    throw new Error("GOOGLE_SHEET_API_KEY is not set");
+    throw new Error("VITE_GOOGLE_SHEET_API_KEY is not set");
   }
 
   const range =
-    (import.meta.env.GOOGLE_SHEET_PAST_EVENTS_RANGE as string) ||
+    (import.meta.env.VITE_GOOGLE_SHEET_PAST_EVENTS_RANGE as string) ||
     PAST_EVENTS_DEFAULT_RANGE;
   const url = new URL(
     `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
